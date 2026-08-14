@@ -1,8 +1,10 @@
 import { site } from "../../config/site";
 import ButtonGroup from "../ui/ButtonGroup";
+import { useTypewriter } from "../../hooks/useTypewriter";
 
 export default function Hero() {
   const { hero } = site;
+  const typedRole = useTypewriter(hero.roles);
 
   return (
     <section className="hero">
@@ -14,8 +16,9 @@ export default function Hero() {
           </p>
           <p className="hero__eyebrow">{hero.eyebrow}</p>
           <h1 className="hero__name">{hero.name}</h1>
-          <h2 className="hero__role">
-            <span className="grad">{hero.role}</span>
+          <h2 className="hero__role" aria-label={hero.roles[0]}>
+            <span className="grad">{typedRole}</span>
+            <span className="hero__cursor" aria-hidden="true" />
           </h2>
           <p className="hero__mono">{hero.mono}</p>
           <p className="hero__lead">{hero.lead}</p>

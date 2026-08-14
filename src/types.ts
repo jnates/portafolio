@@ -54,7 +54,7 @@ export interface SiteConfig {
     badge: string;
     eyebrow: string;
     name: string;
-    role: string;
+    roles: readonly string[];
     mono: string;
     lead: string;
     photo: string;

@@ -33,7 +33,12 @@ export const site: SiteConfig = {
     badge: "Disponible para nuevos proyectos",
     eyebrow: "👋 Hola, soy",
     name: "Juan David Nates",
-    role: "Senior Backend Developer",
+    roles: [
+      "Senior Backend Developer",
+      "Go & Microservicios",
+      "Arquitectura Hexagonal",
+      "Cloud & DevOps",
+    ],
     mono: "Go · NestJS · Microservicios · Arquitectura Hexagonal · Cloud",
     lead:
       "Construyo backends escalables y cloud-native. Actualmente desarrollador senior en Dropi, " +
