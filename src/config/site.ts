@@ -34,37 +34,41 @@ export const site: SiteConfig = {
     eyebrow: "👋 Hola, soy",
     name: "Juan David Nates",
     roles: [
-      "Senior Backend Developer",
+      "Desarrollador Full Stack",
       "Go & Microservicios",
       "Arquitectura Hexagonal",
       "Cloud & DevOps",
     ],
-    mono: "Go · NestJS · Microservicios · Arquitectura Hexagonal · Cloud",
+    mono: "Full Stack · Microservicios · Arquitectura Hexagonal · Cloud",
     lead:
-      "Construyo backends escalables y cloud-native. Actualmente desarrollador senior en Dropi, " +
-      "donde diseñé el core configurable de la plataforma.",
+      "Desarrollador Full Stack enfocado en construir aplicaciones escalables y cloud-native, " +
+      "del backend al frontend, con arquitecturas limpias y buenas prácticas.",
     photo: "/assets/img/me.jpg",
     photoAlt: "Juan David Nates",
     ctas: [emailCta, linkedinCta, githubCta, resumeCta],
   },
   about: {
     kicker: "01 — Sobre mí",
-    title: "Ingeniero de software enfocado en el backend",
+    title: "Ingeniero de software y desarrollador Full Stack",
     paragraphs: [
-      "Soy Ingeniero electrónico especializado en procesos de desarrollo de software y candidato a " +
-        "Máster en Ingeniería de Software (Universidad de San Buenaventura Cali).",
-      "Como Senior Backend Developer en Dropi fui el desarrollador fundador del core configurable de la " +
-        "plataforma: implementé microservicios altamente escalables bajo Arquitectura Hexagonal " +
-        "(Ports & Adapters) con Go (Echo v4), PostgreSQL, Redis y flujos asíncronos con RabbitMQ. También " +
-        "publiqué una librería interna de NestJS con un CLI para generación de boilerplate, y trabajé la " +
-        "capa BFF sobre AWS y Kubernetes.",
-      "Me apasiona la calidad del software y la documentación: SonarQube, Clean Code, contratos de API con " +
-        "Swagger y diagramas de arquitectura en Confluence.",
+      "Soy ingeniero electrónico especializado en procesos de desarrollo de software, con amplia " +
+        "experiencia en la industria. Como desarrollador full stack, entrego aplicaciones web de alta " +
+        "calidad usando React, con habilidades tanto de frontend como de backend. Utilizo diversos " +
+        "frameworks de UI como Material UI y Tailwind CSS. En el backend tengo experiencia creando APIs " +
+        "RESTful con Node.js, Golang, Python (con frameworks como FastAPI y Django), TypeScript, Spring " +
+        "Boot, GraphQL y SonarQube. Además, manejo servicios cloud como AWS S3 y EC2, y tengo amplio " +
+        "conocimiento en tecnologías DevOps como Docker, AWS, Terraform, Kubernetes y Serverless.",
+      "Con experiencia gestionando bases de datos relacionales como Postgres, MySQL y Oracle, y en " +
+        "integración continua con Git usando metodologías ágiles como Scrum, me considero una persona " +
+        "puntual y responsable. Me motiva crear soluciones innovadoras que resuelvan problemas reales y " +
+        "aporten valor a usuarios y clientes. Disfruto colaborar en equipos diversos donde puedo " +
+        "compartir ideas y aprender de los demás. En mi tiempo libre, explorar nueva música es mi pasión " +
+        "y fuente de inspiración para futuros proyectos de código.",
     ],
     facts: [
-      { label: "Rol", value: "Senior Backend Developer @ Dropi" },
+      { label: "Perfil", value: "Desarrollador Full Stack" },
       { label: "Ubicación", value: "Cali, Colombia" },
-      { label: "Enfoque", value: "Backend · Cloud · DevOps" },
+      { label: "Enfoque", value: "Full Stack · Cloud · DevOps" },
       { label: "Educación", value: "Ing. Electrónico · Máster (en curso)" },
       { label: "Disponibilidad", value: "Abierto a colaborar" },
     ],

@@ -45,19 +45,6 @@ body::before {
     radial-gradient(700px 450px at 0% 10%, rgba(56, 189, 248, 0.14), transparent 60%);
 }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 46px 46px;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 25%, transparent 72%);
-  mask-image: radial-gradient(ellipse at 50% 0%, #000 25%, transparent 72%);
-}
 
 .container {
   width: min(100% - 40px, var(--maxw));
@@ -74,6 +61,15 @@ body::after {
   background: var(--grad);
   z-index: 60;
   transition: width 0.1s linear;
+}
+
+/* Animated network background */
+.bg-lines {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 /* Cursor-following spotlight */

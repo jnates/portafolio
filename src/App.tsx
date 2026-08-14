@@ -5,6 +5,7 @@ import About from "./components/sections/About";
 import Stack from "./components/sections/Stack";
 import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
+import BackgroundLines from "./components/ui/BackgroundLines";
 import { useReveal } from "./hooks/useReveal";
 import { useInteractions } from "./hooks/useInteractions";
 
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <>
+      <BackgroundLines />
       <div className="scroll-progress" id="scrollProgress" />
       <div className="spotlight" aria-hidden="true" />
       <Navbar />
