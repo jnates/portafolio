@@ -7,9 +7,10 @@ interface Node {
   vy: number;
 }
 
-const LINK_DISTANCE = 140;
+const LINK_DISTANCE = 160;
+const MOUSE_DISTANCE = 220;
 
-/** Animated network of moving nodes connected by lines, rendered behind the page. */
+/** Animated network of moving nodes connected by lines, reacting to the cursor. */
 export default function BackgroundLines() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -21,6 +22,7 @@ export default function BackgroundLines() {
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const mouse = { x: -9999, y: -9999 };
 
     let width = 0;
     let height = 0;
@@ -36,25 +38,26 @@ export default function BackgroundLines() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.min(80, Math.max(24, Math.floor((width * height) / 18000)));
+      const count = Math.min(120, Math.max(36, Math.floor((width * height) / 13000)));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
       }));
     };
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
+      // node-to-node links
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const a = nodes[i];
           const b = nodes[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
           if (dist < LINK_DISTANCE) {
-            ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - dist / LINK_DISTANCE) * 0.22})`;
+            ctx.strokeStyle = `rgba(96, 165, 250, ${(1 - dist / LINK_DISTANCE) * 0.45})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -64,10 +67,24 @@ export default function BackgroundLines() {
         }
       }
 
+      // cursor links
       for (const node of nodes) {
-        ctx.fillStyle = "rgba(167, 139, 250, 0.55)";
+        const dist = Math.hypot(node.x - mouse.x, node.y - mouse.y);
+        if (dist < MOUSE_DISTANCE) {
+          ctx.strokeStyle = `rgba(167, 139, 250, ${(1 - dist / MOUSE_DISTANCE) * 0.7})`;
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.moveTo(node.x, node.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      // nodes
+      for (const node of nodes) {
+        ctx.fillStyle = "rgba(125, 211, 252, 0.85)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 1.6, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, 1.9, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -83,6 +100,15 @@ export default function BackgroundLines() {
       raf = window.requestAnimationFrame(tick);
     };
 
+    const onPointerMove = (event: PointerEvent) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    };
+    const onPointerLeave = () => {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    };
+
     resize();
     render(); // paint an immediate first frame
     if (!reduceMotion) {
@@ -90,9 +116,14 @@ export default function BackgroundLines() {
     }
 
     window.addEventListener("resize", resize);
+    window.addEventListener("pointermove", onPointerMove);
+    document.addEventListener("pointerleave", onPointerLeave);
+
     return () => {
       window.cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", onPointerMove);
+      document.removeEventListener("pointerleave", onPointerLeave);
     };
   }, []);
 

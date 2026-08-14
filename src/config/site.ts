@@ -7,7 +7,7 @@ const LINKEDIN = "https://www.linkedin.com/in/jnates/";
 const GITHUB = "https://github.com/jnates";
 const CV_URL = "/assets/cv/juan-david-nates-cv.pdf";
 
-const emailCta: CtaLink = { label: "✉️ Escríbeme", href: `mailto:${EMAIL}`, variant: "primary" };
+const emailCta: CtaLink = { label: "Escríbeme", href: `mailto:${EMAIL}`, variant: "primary" };
 const linkedinCta: CtaLink = { label: "LinkedIn", href: LINKEDIN };
 const githubCta: CtaLink = { label: "GitHub", href: GITHUB };
 const resumeCta: CtaLink = { label: "Descargar CV", href: CV_URL, external: true };
@@ -177,7 +177,7 @@ export const site: SiteConfig = {
     kicker: "04 — Contacto",
     title: "¿Trabajamos juntos?",
     lead: "Estoy abierto a proyectos, colaboraciones y buenas ideas. La forma más rápida de llegar a mí:",
-    ctas: [{ label: `✉️ ${EMAIL}`, href: `mailto:${EMAIL}`, variant: "primary" }, linkedinCta, githubCta],
+    ctas: [{ label: EMAIL, href: `mailto:${EMAIL}`, variant: "primary" }, linkedinCta, githubCta],
   },
   footer: {
     note: "Hecho desde Cali, Colombia 🇨🇴",
