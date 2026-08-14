@@ -12,7 +12,16 @@ export default function Stack() {
             <h3>{group.title}</h3>
             <ul className="chips">
               {group.items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item.name} className="chip">
+                  {item.icon ? (
+                    <i className={item.icon} aria-hidden="true" />
+                  ) : (
+                    <span className="chip__dot" aria-hidden="true">
+                      {item.name.charAt(0)}
+                    </span>
+                  )}
+                  {item.name}
+                </li>
               ))}
             </ul>
           </div>

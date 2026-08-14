@@ -9,8 +9,7 @@ export default function Navbar() {
     <header className="nav" id="top">
       <div className="container nav__inner">
         <a href="#top" className="nav__brand" onClick={close}>
-          {site.brand}
-          <span>.</span>
+          <span className="nav__brand-lead">{site.brand.lead}</span> {site.brand.name}
         </a>
 
         <nav className={`nav__links${open ? " open" : ""}`}>

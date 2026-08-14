@@ -8,6 +8,10 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero__inner">
         <div className="hero__text">
+          <p className="hero__badge">
+            <span className="hero__badge-dot" aria-hidden="true" />
+            {hero.badge}
+          </p>
           <p className="hero__eyebrow">{hero.eyebrow}</p>
           <h1 className="hero__name">{hero.name}</h1>
           <h2 className="hero__role">

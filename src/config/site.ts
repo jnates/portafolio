@@ -13,7 +13,10 @@ const githubCta: CtaLink = { label: "GitHub", href: GITHUB };
 const resumeCta: CtaLink = { label: "Descargar CV", href: CV_URL, external: true };
 
 export const site: SiteConfig = {
-  brand: "JN",
+  brand: {
+    lead: "Ing.",
+    name: "Juan Nates",
+  },
   meta: {
     fullName: "Juan David Nates Huertas",
     role: "Senior Backend Developer",
@@ -27,6 +30,7 @@ export const site: SiteConfig = {
     { label: "Contacto", href: "#contact" },
   ],
   hero: {
+    badge: "Disponible para nuevos proyectos",
     eyebrow: "👋 Hola, soy",
     name: "Juan David Nates",
     role: "Senior Backend Developer",
@@ -64,16 +68,53 @@ export const site: SiteConfig = {
     kicker: "02 — Stack",
     title: "Tecnologías con las que trabajo",
     groups: [
-      { title: "Lenguajes", items: ["Go", "TypeScript", "JavaScript", "Java", "Python", "PHP"] },
+      {
+        title: "Lenguajes",
+        items: [
+          { name: "Go", icon: "devicon-go-plain colored" },
+          { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+          { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+          { name: "Java", icon: "devicon-java-plain colored" },
+          { name: "Python", icon: "devicon-python-plain colored" },
+          { name: "PHP", icon: "devicon-php-plain colored" },
+        ],
+      },
       {
         title: "Backend & Frontend",
-        items: ["NestJS", "Node.js", "Spring Boot", "FastAPI", "Django", "GraphQL", "React", "Angular"],
+        items: [
+          { name: "NestJS", icon: "devicon-nestjs-original colored" },
+          { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+          { name: "Spring Boot", icon: "devicon-spring-original colored" },
+          { name: "FastAPI", icon: "devicon-fastapi-plain colored" },
+          { name: "Django", icon: "devicon-django-plain colored" },
+          { name: "GraphQL", icon: "devicon-graphql-plain colored" },
+          { name: "React", icon: "devicon-react-original colored" },
+          { name: "Angular", icon: "devicon-angular-plain colored" },
+        ],
       },
       {
         title: "Cloud & DevOps",
-        items: ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform", "Serverless", "Linux"],
+        items: [
+          { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored" },
+          { name: "Azure", icon: "devicon-azure-plain colored" },
+          { name: "GCP", icon: "devicon-googlecloud-plain colored" },
+          { name: "Docker", icon: "devicon-docker-plain colored" },
+          { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
+          { name: "Terraform", icon: "devicon-terraform-plain colored" },
+          { name: "Serverless" },
+          { name: "Linux", icon: "devicon-linux-plain colored" },
+        ],
       },
-      { title: "Datos & Mensajería", items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "RabbitMQ"] },
+      {
+        title: "Datos & Mensajería",
+        items: [
+          { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
+          { name: "MySQL", icon: "devicon-mysql-original colored" },
+          { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+          { name: "Redis", icon: "devicon-redis-plain colored" },
+          { name: "RabbitMQ", icon: "devicon-rabbitmq-original colored" },
+        ],
+      },
     ],
   },
   projects: {

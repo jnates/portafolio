@@ -15,9 +15,15 @@ export interface NavLink {
   href: string;
 }
 
+export interface StackItem {
+  name: string;
+  /** Devicon CSS class, e.g. "devicon-go-plain colored". Optional. */
+  icon?: string;
+}
+
 export interface StackGroup {
   title: string;
-  items: readonly string[];
+  items: readonly StackItem[];
 }
 
 export interface Project {
@@ -33,7 +39,10 @@ export interface Fact {
 }
 
 export interface SiteConfig {
-  brand: string;
+  brand: {
+    lead: string;
+    name: string;
+  };
   meta: {
     fullName: string;
     role: string;
@@ -42,6 +51,7 @@ export interface SiteConfig {
   cvUrl: string;
   nav: readonly NavLink[];
   hero: {
+    badge: string;
     eyebrow: string;
     name: string;
     role: string;
